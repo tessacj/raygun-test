@@ -5,7 +5,7 @@
     <div class="trendings" v-for="trendings in trendingChunks" :key="trendings">
       <div class="place" v-for="trending in trendings" :key="trending">
         <h2>{{ trending.original_title }}</h2>
-        <img :src="'https://image.tmdb.org/t/p/w500'+trending.poster_path" width="235" height="300"/>
+        <img v-if="trending.poster_path" :src="'https://image.tmdb.org/t/p/w500'+trending.poster_path" width="235" height="300"/>
         <slot></slot>
         <p>{{ trending.overview }}</p>
       </div>

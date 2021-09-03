@@ -14,6 +14,7 @@
 <script type="text/javascript">
     rg4js('apiKey', 'BJmDCHGMJrQ9L7oTOhX9xg');
     rg4js('enableCrashReporting', true);
+    rg4js('logContentsOfXhrCalls', true);
 </script>
 
 <script>

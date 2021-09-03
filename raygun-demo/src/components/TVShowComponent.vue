@@ -5,7 +5,7 @@
     <div class="tvshows" v-for="tvshows in tvshowChunks" :key="tvshows">
       <div class="place" v-for="tvshow in tvshows" :key="tvshow">
         <h2>{{ tvshow.original_title }}</h2>
-        <img :src="'https://image.tmdb.org/t/p/w500'+tvshow.poster_path" width="235" height="300"/>
+        <img v-if="tvshow.poster_path" :src="'https://image.tmdb.org/t/p/w500'+tvshow.poster_path" width="235" height="300"/>
         <slot></slot>
         <p>{{ tvshow.overview }}</p>
       </div>

@@ -5,7 +5,7 @@
     <div class="movies" v-for="movies in movieChunks" :key="movies">
       <div class="place" v-for="movie in movies" :key="movie">
         <h2>{{ movie.original_title }}</h2>
-        <img :src="'https://image.tmdb.org/t/p/w500'+movie.poster_path" width="235" height="300"/>
+        <img v-if="movie.poster_path" :src="'https://image.tmdb.org/t/p/w500'+movie.poster_path" width="235" height="300"/>
         <slot></slot>
         <p>{{ movie.overview }}</p>
       </div>

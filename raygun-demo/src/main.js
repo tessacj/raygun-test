@@ -4,6 +4,7 @@ import router from './router'
 import rg4js from 'raygun4js';
 
 rg4js('enableCrashReporting', true);
+rg4js('logContentsOfXhrCalls', true);
 rg4js('apiKey', 'BJmDCHGMJrQ9L7oTOhX9xg');
 rg4js('options', {
   automaticPerformanceCustomTimings: true,

@@ -30,6 +30,7 @@ import rg4js from 'raygun4js';
 import { getPageData } from './services/PageService'
 
 rg4js('enableCrashReporting', true);
+rg4js('logContentsOfXhrCalls', true);
 rg4js('apiKey', 'BJmDCHGMJrQ9L7oTOhX9xg');
 rg4js('options', {
   automaticPerformanceCustomTimings: true,
@@ -37,6 +38,7 @@ rg4js('options', {
   enablePulse: true
 })
 rg4js('withTags', ['vue', 'frontend','pages']);
+rg4js('filterSensitiveData', ['page']);
 
 export default {
   data() {

@@ -4,7 +4,8 @@ const https = require('https')
 const raygun = require('raygun');
 
 const raygunClient = new raygun.Client().init({
-  apiKey: 'BJmDCHGMJrQ9L7oTOhX9xg'
+  apiKey: 'BJmDCHGMJrQ9L7oTOhX9xg',
+  filters: ['page']
 });
 
 exports.pages = async (req, res) => {
@@ -36,7 +37,7 @@ exports.pages = async (req, res) => {
       })
     res.send(resp.data)
 
-    raygunClient.send(new Error('Something impossible happened!'), {}, function () {}, {}, ['custom error', 'manual error', 'express', 'server']); //manual error
+    raygunClient.send(new Error('Something impossible happened!'), {}, function () {}, resp.data, ['custom error', 'manual error', 'express', 'server']); //manual error
   
   } catch (err) {
     const status = err.response
